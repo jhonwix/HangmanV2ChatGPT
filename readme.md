@@ -1,6 +1,6 @@
 # Hangman Game
 
-This is a simple implementation of the classic Hangman game using HTML, CSS, and JavaScript.
+This is a simple implementation of the classic Hangman game using HTML, CSS, and JavaScript, styled with Bootstrap.
 
 ## Game Rules
 
@@ -16,6 +16,12 @@ In this digital version, the computer selects a random word from a list, and the
 4. If the letter is in the word, it replaces the dash(es) in the correct position(s).
 5. If the letter is not in the word, a part of the hangman is drawn.
 6. The game ends when the word is fully guessed or the hangman is fully drawn.
+7. You can start a new game at any time by clicking the "Start New Game" button.
+8. You can add your own words to the game by entering them in the input field and clicking the "Add Word" button.
+
+## Scoring
+
+You start with a score of 0. Each time you guess a letter correctly, you earn 1 point. If you guess the word correctly, you earn an additional 10 points. If you guess a letter incorrectly, you lose 1 point.
 
 ## Setup and Run Locally
 
