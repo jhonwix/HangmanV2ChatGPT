@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#word {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#hangman {
+    margin-bottom: 20px;
+}
+
+#alphabet {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#alphabet .letter {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 5px;
+    background: #ddd;
+    text-align: center;
+    cursor: pointer;
+}
