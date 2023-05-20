@@ -27,3 +27,6 @@ body {
     text-align: center;
     cursor: pointer;
 }
+#word, #hangman, #alphabet {
+    text-align: center;
+}

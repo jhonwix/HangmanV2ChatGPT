@@ -2,13 +2,29 @@
 <html>
 <head>
     <title>Hangman Game</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Hangman Game</h1>
-    <div id="word"></div>
-    <div id="hangman"></div>
-    <div id="alphabet"></div>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class="display-5">Hangman Game</h1>
+            <p class="lead">Guess the word before the hangman is drawn!</p>
+          </div>
+        <div id="word" class="text-center mt-4"></div>
+        <div id="hangman" class="text-center mt-4"></div>
+        <div id="score" class="text-center mt-4"></div>
+        <div id="alphabet" class="d-flex flex-wrap justify-content-center mt-4"></div>
+        <div class="d-flex justify-content-center mt-4">
+            <button id="newGameButton" class="btn btn-primary">Start New Game</button>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+            <input type="text" id="newWordInput" class="form-control" style="width: 200px;" placeholder="Enter a word">
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+            <button id="addWordButton" class="btn btn-secondary">Add Word</button>
+        </div>
+        <div id="wordList" class="text-center mt-4"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
