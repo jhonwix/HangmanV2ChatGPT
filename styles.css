@@ -22,7 +22,7 @@ button:hover {
 
 #word {
     font-size: 2em; /* Increase the size of the word */
-    letter-spacing: 0.5cm; /* Add spacing between the letters */
+    letter-spacing: 0.5em; /* Add spacing between the letters */
 }
 
 #alphabet .btn,
