@@ -20,6 +20,11 @@ button:hover {
     color: #FD7E14; /* Orange text on hover */
 }
 
+#word {
+    font-size: 2em; /* Increase the size of the word */
+    letter-spacing: 0.5cm; /* Add spacing between the letters */
+}
+
 #alphabet .btn,
 #word, 
 #score, 
