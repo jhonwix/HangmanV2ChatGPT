@@ -23,6 +23,18 @@ In this digital version, the computer selects a random word from a list, and the
 
 You start with a score of 0. Each time you guess a letter correctly, you earn 1 point. If you guess the word correctly, you earn an additional 10 points. If you guess a letter incorrectly, you lose 1 point.
 
+## Features
+The game selects a random word from a list of words.
+The player can guess a letter by clicking on a button.
+The game keeps track of the player's score.
+The game shows a modal with the outcome of the game (win or lose) when the game is over.
+The game restarts when the modal close button is clicked.
+
+## Future Enhancements
+Add more words to the list or allow the player to add their own words.
+Improve the design and make it responsive for mobile devices.
+Add a high score feature to keep track of the player's best score.
+
 ## Setup and Run Locally
 
 To set up and run the game locally, follow these steps:

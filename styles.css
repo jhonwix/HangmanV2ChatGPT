@@ -1,32 +1,80 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-#word {
-    font-size: 2em;
-    margin-bottom: 20px;
+    background-color: #F5F5DC; /* Beige */
+    color: #333333; /* Dark gray */
 }
 
 #hangman {
-    margin-bottom: 20px;
+    margin: 0 auto;
 }
 
-#alphabet {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+button {
+    background-color: #FD7E14; /* Vibrant orange */
+    color: #FFFFFF; /* White for contrast */
+    border: none;
 }
 
-#alphabet .letter {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+button:hover {
+    background-color: #FFFFFF; /* White on hover */
+    color: #FD7E14; /* Orange text on hover */
+}
+
+#alphabet .btn,
+#word, 
+#score, 
+#alphabet, 
+#wordList,
+#newGameButton, 
+#addWordButton,
+#newWordInput {
+    margin-top: 20px;
+}
+
+#alphabet .btn {
     margin: 5px;
-    background: #ddd;
-    text-align: center;
-    cursor: pointer;
 }
-#word, #hangman, #alphabet {
-    text-align: center;
+
+#word, 
+#score, 
+#alphabet, 
+#wordList {
+    color: #007BFF; /* Blue */
+}
+
+#newWordInput {
+    max-width: 200px;
+}
+
+.modal-content {
+    background-color: #FD7E14; /* Vibrant orange */
+    color: #FFFFFF; /* White for contrast */
+}
+
+.modal-header, 
+.modal-footer {
+    border: none;
+}
+
+.modal-title {
+    color: #FFFFFF; /* White for contrast */
+}
+
+.modal-body {
+    font-weight: bold;
+}
+
+@keyframes fadeInOut {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+#head,
+#body,
+#left-arm,
+#right-arm,
+#left-leg,
+#right-leg {
+    animation-name: fadeInOut;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
 }
