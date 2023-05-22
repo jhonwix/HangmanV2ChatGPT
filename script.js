@@ -3,6 +3,8 @@ var word = words[Math.floor(Math.random() * words.length)];
 var guessedLetters = [];
 var attempts = 6;
 var score = 0;
+var alphabet = 'abcdefghijklmnopqrstuvwxyz'; // Define alphabet as a global vari
+var hintUsed = false; // New variable to track if hint has been used in the current game
 
 function displayWord() {
     var display = '';
@@ -29,7 +31,7 @@ function displayHangman() {
 }
 
 function displayAlphabet() {
-    var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    //var alphabet = 'abcdefghijklmnopqrstuvwxyz';
     var display = '';
     for (var i = 0; i < alphabet.length; i++) {
         display += '<button id="' + alphabet[i] + '" class="btn btn-outline-primary m-1" onclick="guess(\'' + alphabet[i] + '\')">' + alphabet[i] + '</button>';
@@ -60,10 +62,16 @@ function guess(letter) {
             score--;
         }
     }
+
     displayWord();
     displayHangman();
     displayScore();
     document.getElementById(letter).style.display = 'none'; // Hide the clicked letter
+
+    if (attempts === 2 && !hintUsed) { // Only show the hint button if hint has not been used
+        document.getElementById('hintButton').style.display = 'block'; // Show the hint button
+    }
+
     if (attempts <= 0) {
         showModal('You lost! The word was ' + word);
     } else if (document.getElementById('word').textContent.indexOf('_') === -1) {
@@ -90,6 +98,7 @@ function startNewGame() {
     guessedLetters = [];
     attempts = 6;
     score = 0;
+    hintUsed = false; // Reset hintUsed to false at the start of each new game
     displayWord();
     displayHangman();
     displayScore();
@@ -105,15 +114,7 @@ function startNewGame() {
 
 document.getElementById('newGameButton').addEventListener('click', startNewGame);
 document.getElementById('addWordButton').addEventListener('click', addWord);
-/*
-// Show the head
-document.getElementById('head').style.visibility = 'visible';
-document.getElementById('head').classList.add('animate');
 
-// Hide the head
-document.getElementById('head').style.visibility = 'hidden';
-document.getElementById('head').classList.remove('animate');
-*/
 function animateBodyPart(id, action) {
     var element = document.getElementById(id);
     if(action === 'show') {
@@ -123,6 +124,23 @@ function animateBodyPart(id, action) {
         element.style.visibility = 'hidden';
         element.classList.remove('animate');
     }
+}
+function giveHint() {
+    hintUsed = true; // Set hintUsed to true when hint is used
+    var incorrectLetters = [];
+    for (var i = 0; i < alphabet.length; i++) {
+        var letter = alphabet[i];
+        if (word.indexOf(letter) === -1 && document.getElementById(letter).style.display !== 'none') {
+            incorrectLetters.push(letter);
+        }
+    }
+    var lettersToHide = Math.floor(incorrectLetters.length * 0.5);
+    for (var i = 0; i < lettersToHide; i++) {
+        var randomIndex = Math.floor(Math.random() * incorrectLetters.length);
+        document.getElementById(incorrectLetters[randomIndex]).style.display = 'none';
+        incorrectLetters.splice(randomIndex, 1);
+    }
+    document.getElementById('hintButton').style.display = 'none'; // Hide the hint button after it's clicked
 }
 
 // Initialize game
